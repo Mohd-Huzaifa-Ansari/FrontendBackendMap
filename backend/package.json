@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type":"module"
+}
