@@ -13,6 +13,21 @@ import GeoJSON from "ol/format/GeoJSON";
 
 import "./App.css";
 import MapOne from "./components/MapOne";
+import Draw from "./components/Draw";
+import DrawFunctionality from "./components/Draw";
+import MapComponent from "./components/MapComp";
+import LMapComponent from "./components/Latest";
+import TLMapComponent from "./components/TryAgain";
+import Edit from "./components/Edit";
+import MapComponents from "./newcomponent/MapComponents";
+import LocalStorage from "./newcomponent/LocalStorage";
+// import { BrowserRouter as Router, Route, Routes,Switch, Redirect } from 'react-router-dom';
+
+
+
+// 1. Load this geojson on map -- MOnday   /// Completed on monday but have bug --- bug fixed on tuesday at 12:20 pm
+//   2. Zoom in to parcel -- useeffect -- Monday  // completed on monday
+//   3. Draw edit and delete -- Wednsday    // start this at 12:32pm
 
 function App() {
   const [parcelData, setParcelData] = useState([]);
@@ -30,7 +45,7 @@ function App() {
         setParcelData(res.data);
 
         setCenterCoor(res.data.features[0].geometry.coordinates[0][0][14])
-        console.log(res.data.features[0].geometry.coordinates[0][0][7] , " coordinate value")
+        // console.log(res.data.features[0].geometry.coordinates[0][0][7] , " coordinate value")
 
        
       })
@@ -44,7 +59,7 @@ function App() {
   useEffect(() => {
     if (parcelData.length === 0) return; // Don't proceed if parcelData is empty
     if (mapRef.current) {
-      console.log(mapRef, "ref", parcelData);
+      // console.log(mapRef, "ref", parcelData);
 
       const image = new CircleStyle({
         radius: 10,
@@ -135,20 +150,51 @@ function App() {
 
   ///////////////////////
   useEffect(() => {
-    console.log(`saved data ${parcelData}`);
-    console.log(parcelData);
-      console.log(centerCoor, "center coordinate value ")
+    // console.log(`saved data ${parcelData}`);
+    // console.log(parcelData);
+    //   console.log(centerCoor, "center coordinate value ")
   }, [parcelData]);
 
 
 
   return (
+    // <BrowserRouter>
+    // <Routes>
     <>
+
+    {/* isme sirf geojson render horha aur zoom horha  */}
       <div ref={mapRef} id="map" />
+      {/* <div id="btn" > <button onClick={<Edit/>}>Edit</button></div> */}
 
       {/* <MapOne /> */}
-      {/* <h2>Parcel Data:</h2> */}
-    </>
+      
+       {/* <DrawFunctionality /> */}
+
+       {/* <MapComponent /> */}
+
+      
+      {/* latest.jsx  Draw Polygon */}
+       {/* <LMapComponent /> */}
+
+
+        {/* TryAgain.jsx */}
+       {/* <TLMapComponent /> */}
+
+
+         {/* isme edit horha  */}
+
+       {/* <Edit /> */}
+
+       {/* thursday */}
+
+       {/* <MapComponents /> */}
+
+      
+
+       </>
+    
+    //    </Routes>
+    // </BrowserRouter>
   );
 }
 

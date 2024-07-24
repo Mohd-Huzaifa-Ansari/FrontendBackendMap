@@ -1,0 +1,30 @@
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color:rgb(40, 39, 39) ;
+    overflow: hidden;
+}
+#map{
+     background-color:rgb(40, 39, 39) ;
+    overflow: hidden;
+}
+
+#btndiv{
+    width: 100vw;
+    height: 100px;
+    background-color: rgb(63, 62, 62);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    padding: 20px 40px;
+
+}
+button{
+   
+    background: #000;
+    color: rgb(0, 0, 0);
+}
